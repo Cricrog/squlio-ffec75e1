@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import FeaturesSection from '@/components/FeaturesSection';
@@ -17,16 +16,14 @@ const Index = () => {
   };
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen">
-        <Navbar onJoinWaitlist={scrollToWaitlist} />
-        <HeroSection onJoinWaitlist={scrollToWaitlist} />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <WaitlistSection />
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen">
+      <Navbar onJoinWaitlist={scrollToWaitlist} />
+      <HeroSection onJoinWaitlist={scrollToWaitlist} />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <WaitlistSection />
+      <Footer />
+    </div>
   );
 };
 
