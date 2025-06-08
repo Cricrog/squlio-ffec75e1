@@ -2,26 +2,29 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const TestimonialsSection = () => {
+  const { t } = useLanguage();
+
   const testimonials = [
     {
-      quote: "Xila.AI transformed our email management completely. We went from missing important client emails to having everything perfectly organized and responded to within minutes.",
-      author: "Sarah Mitchell",
-      role: "Operations Manager",
-      company: "TechStart Solutions"
+      quote: t('testimonials.sarah.quote'),
+      author: t('testimonials.sarah.author'),
+      role: t('testimonials.sarah.role'),
+      company: t('testimonials.sarah.company')
     },
     {
-      quote: "As a small business, we couldn't afford a full-time receptionist. Xila.AI gave us professional email handling that makes us look like a much larger company.",
-      author: "Marcus Chen", 
-      role: "Founder",
-      company: "CreativeFlow Agency"
+      quote: t('testimonials.marcus.quote'),
+      author: t('testimonials.marcus.author'), 
+      role: t('testimonials.marcus.role'),
+      company: t('testimonials.marcus.company')
     },
     {
-      quote: "The AI routing is incredibly accurate. Our sales team gets sales inquiries instantly, support gets technical questions, and I get the strategic stuff. It just works.",
-      author: "Elena Rodriguez",
-      role: "CEO",
-      company: "GrowthLab Consulting"
+      quote: t('testimonials.elena.quote'),
+      author: t('testimonials.elena.author'),
+      role: t('testimonials.elena.role'),
+      company: t('testimonials.elena.company')
     }
   ];
 
@@ -30,10 +33,10 @@ const TestimonialsSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            What Our Beta Users Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what early adopters are saying about Xila.AI
+            {t('testimonials.subtitle')}
           </p>
         </div>
         
