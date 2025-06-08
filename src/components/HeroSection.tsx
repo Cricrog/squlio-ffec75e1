@@ -1,11 +1,12 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Mail, ArrowRight } from 'lucide-react';
-
-const HeroSection = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
+const HeroSection = ({
+  onJoinWaitlist
+}: {
+  onJoinWaitlist: () => void;
+}) => {
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-400/20 to-purple-600/20 rounded-full blur-3xl"></div>
@@ -30,16 +31,10 @@ const HeroSection = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           <span className="text-4xl md:text-6xl">Never Misses an Email</span>
         </h1>
         
-        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Transform your Gmail & Outlook into an intelligent receptionist that routes emails perfectly and responds instantly - designed for SMEs who can't afford a digital receptionist.
-        </p>
+        <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">Transform your Gmail & Outlook into an intelligent receptionist that routes emails perfectly and responds instantly - designed for SMEs who want to have a smart info@ inbox.</p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button 
-            onClick={onJoinWaitlist}
-            size="lg" 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-          >
+          <Button onClick={onJoinWaitlist} size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group">
             Join the Waitlist
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
@@ -64,8 +59,6 @@ const HeroSection = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
