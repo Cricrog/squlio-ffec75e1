@@ -11,9 +11,7 @@ const Footer = () => {
             <span className="text-xl font-bold">Xila.AI</span>
           </div>
           
-          <div className="text-sm text-gray-400">
-            © 2024 Xila.AI. All rights reserved.
-          </div>
+          <div className="text-sm text-gray-400">© 2025 Xila.AI. All rights reserved.</div>
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
