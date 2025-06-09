@@ -62,9 +62,9 @@ const translations = {
     joinWaitlist: "Warteliste beitreten",
     
     // Hero Section
-    aiReceptionist: "Ihr KI-Empfangschef",
+    aiReceptionist: "Ihr KI-Rezeptionist",
     neverMisses: "Verpasst nie eine E-Mail",
-    heroDescription: "Verwandeln Sie Ihr Gmail & Outlook in einen intelligenten Empfangschef, der E-Mails perfekt weiterleitet und sofort antwortet - entwickelt für KMU, die einen smarten info@ Posteingang wollen.",
+    heroDescription: "Verwandeln Sie Ihr Gmail & Outlook in einen intelligenten Rezeptionist, der E-Mails perfekt weiterleitet und sofort antwortet - entwickelt für KMU, die einen smarten info@ Posteingang wollen.",
     earlyAccess: "🚀 Früher Zugang • Keine Kreditkarte erforderlich",
     emailAccuracy: "E-Mail-Genauigkeit",
     responseTime: "Antwortzeit",
@@ -100,7 +100,7 @@ const translations = {
     // Testimonials
     testimonialsTitle: "Was unsere Beta-Nutzer sagen",
     testimonialsSubtitle: "Verlassen Sie sich nicht nur auf unser Wort. Hier ist, was Early Adopters über Xila.AI sagen",
-    sebastianQuote: "Mit Xila.AI werden allgemeine Geschäftsanfragen jetzt entweder automatisch beantwortet oder nahtlos an den entsprechenden Kollegen weitergeleitet. Es ist ein Game Changer für die Verwaltung unserer info@ Inbox, wir müssen sie eigentlich nicht mehr verwalten.",
+    sebastianQuote: "Mit Xila.AI werden allgemeine Geschäftsanfragen jetzt entweder automatisch beantwortet oder nahtlos an den entsprechenden Kollegen weitergeleitet. Es ist ein Game Changer für das Management unserer info@ Inbox, wir müssen sie eigentlich nicht mehr managen.",
     sebastianName: "Sebastian Fröhlich",
     sebastianCompany: "Mertens Steuerberater GmbH"
   }
@@ -109,7 +109,7 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('de');
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations['en']] || key;
