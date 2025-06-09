@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'de';
@@ -22,23 +23,12 @@ const translations = {
     responseTime: "Response Time",
     alwaysActive: "Always Active",
     
-    // Features (keeping existing content)
-    
     // Testimonials
     testimonialsTitle: "What Our Beta Users Say",
     testimonialsSubtitle: "Don't just take our word for it. Here's what early adopters are saying about Xila.AI",
-    testimonial1: "Xila.AI transformed our email management completely. We went from missing important client emails to having everything perfectly organized and responded to within minutes.",
-    testimonial1Author: "Sarah Mitchell",
-    testimonial1Role: "Operations Manager",
-    testimonial1Company: "TechStart Solutions",
-    testimonial2: "As a small business, we couldn't afford a full-time receptionist. Xila.AI gave us professional email handling that makes us look like a much larger company.",
-    testimonial2Author: "Marcus Chen",
-    testimonial2Role: "Founder", 
-    testimonial2Company: "CreativeFlow Agency",
-    testimonial3: "The AI routing is incredibly accurate. Our sales team gets sales inquiries instantly, support gets technical questions, and I get the strategic stuff. It just works.",
-    testimonial3Author: "Elena Rodriguez",
-    testimonial3Role: "CEO",
-    testimonial3Company: "GrowthLab Consulting"
+    sebastianQuote: "With Xila.AI, generic business inquiries are now either answered automatically or seamlessly routed to the appropriate colleague. It's a game changer for managing our info@ inbox, we actually no longer have to manage it.",
+    sebastianName: "Sebastian Fröhlich",
+    sebastianCompany: "Mertens Steuerberater GmbH"
   },
   de: {
     // Navbar
@@ -56,18 +46,9 @@ const translations = {
     // Testimonials
     testimonialsTitle: "Was unsere Beta-Nutzer sagen",
     testimonialsSubtitle: "Verlassen Sie sich nicht nur auf unser Wort. Hier ist, was Early Adopters über Xila.AI sagen",
-    testimonial1: "Xila.AI hat unser E-Mail-Management völlig verändert. Wir gingen davon aus, wichtige Kunden-E-Mails zu verpassen, zu allem perfekt organisiert und innerhalb von Minuten beantwortet.",
-    testimonial1Author: "Sarah Mitchell",
-    testimonial1Role: "Betriebsleiterin",
-    testimonial1Company: "TechStart Solutions",
-    testimonial2: "Als kleines Unternehmen konnten wir uns keine Vollzeit-Empfangsdame leisten. Xila.AI gab uns professionelle E-Mail-Bearbeitung, die uns wie ein viel größeres Unternehmen aussehen lässt.",
-    testimonial2Author: "Marcus Chen",
-    testimonial2Role: "Gründer",
-    testimonial2Company: "CreativeFlow Agency",
-    testimonial3: "Das KI-Routing ist unglaublich genau. Unser Vertriebsteam bekommt Verkaufsanfragen sofort, Support bekommt technische Fragen, und ich bekomme die strategischen Sachen. Es funktioniert einfach.",
-    testimonial3Author: "Elena Rodriguez",
-    testimonial3Role: "CEO",
-    testimonial3Company: "GrowthLab Consulting"
+    sebastianQuote: "Mit Xila.AI werden allgemeine Geschäftsanfragen jetzt entweder automatisch beantwortet oder nahtlos an den entsprechenden Kollegen weitergeleitet. Es ist ein Game Changer für die Verwaltung unserer info@ Inbox, wir müssen sie eigentlich nicht mehr verwalten.",
+    sebastianName: "Sebastian Fröhlich",
+    sebastianCompany: "Mertens Steuerberater GmbH"
   }
 };
 
