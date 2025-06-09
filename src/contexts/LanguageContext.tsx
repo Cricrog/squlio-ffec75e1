@@ -64,7 +64,7 @@ const translations = {
     // Hero Section
     aiReceptionist: "Ihr KI-Rezeptionist",
     neverMisses: "Verpasst nie eine E-Mail",
-    heroDescription: "Verwandeln Sie Ihr Gmail & Outlook in einen intelligenten Rezeptionist, der E-Mails perfekt weiterleitet und sofort antwortet - entwickelt für KMU, die einen smarten info@ Posteingang wollen.",
+    heroDescription: "Verwandeln Sie Ihr Gmail & Outlook in einen intelligenten Rezeptionist, der E-Mails perfekt weiterleitet und sofort antwortet - entwickelt für KMU, die eine smarte info@ Inbox wollen.",
     earlyAccess: "🚀 Früher Zugang • Keine Kreditkarte erforderlich",
     emailAccuracy: "E-Mail-Genauigkeit",
     responseTime: "Antwortzeit",
