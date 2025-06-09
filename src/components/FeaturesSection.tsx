@@ -2,31 +2,34 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Users, Clock, Shield } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FeaturesSection = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: Mail,
-      title: "Smart Email Routing",
-      description: "AI understands email context and automatically routes messages to the right person in your organization",
+      title: t('smartEmailRouting'),
+      description: t('smartEmailRoutingDesc'),
       gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: Clock,
-      title: "Instant Responses",
-      description: "Responds to basic queries immediately without human intervention, saving time and improving customer satisfaction",
+      title: t('instantResponses'),
+      description: t('instantResponsesDesc'),
       gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: Users,
-      title: "SME Focused",
-      description: "Designed specifically for small and medium enterprises who need professional email management on a budget",
+      title: t('smeFocused'),
+      description: t('smeFocusedDesc'),
       gradient: "from-green-500 to-emerald-500"
     },
     {
       icon: Shield,
-      title: "Secure Integration",
-      description: "Seamlessly integrates with Gmail and Outlook with enterprise-grade security and privacy protection",
+      title: t('secureIntegration'),
+      description: t('secureIntegrationDesc'),
       gradient: "from-orange-500 to-red-500"
     }
   ];
@@ -36,10 +39,10 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Why Choose Xila.AI?
+            {t('featuresTitle')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your email workflow with AI-powered intelligence that works around the clock
+            {t('featuresSubtitle')}
           </p>
         </div>
         
