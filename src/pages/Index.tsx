@@ -6,7 +6,6 @@ import FeaturesSection from '@/components/FeaturesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import WaitlistSection from '@/components/WaitlistSection';
 import Footer from '@/components/Footer';
-import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const Index = () => {
   const scrollToWaitlist = () => {
@@ -17,16 +16,14 @@ const Index = () => {
   };
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen">
-        <Navbar onJoinWaitlist={scrollToWaitlist} />
-        <HeroSection onJoinWaitlist={scrollToWaitlist} />
-        <FeaturesSection />
-        <TestimonialsSection />
-        <WaitlistSection />
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen">
+      <Navbar onJoinWaitlist={scrollToWaitlist} />
+      <HeroSection onJoinWaitlist={scrollToWaitlist} />
+      <FeaturesSection />
+      <TestimonialsSection />
+      <WaitlistSection />
+      <Footer />
+    </div>
   );
 };
 
