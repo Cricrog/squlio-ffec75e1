@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'de';
@@ -13,6 +12,7 @@ const translations = {
   en: {
     // Navbar
     joinWaitlist: "Join Waitlist",
+    howItWorks: "How does it work?",
     
     // Hero Section
     aiReceptionist: "Your AI Receptionist",
@@ -55,11 +55,26 @@ const translations = {
     testimonialsSubtitle: "Don't just take our word for it. Here's what early adopters are saying about Squlio.AI",
     sebastianQuote: "With Squlio.AI, generic business inquiries are now either answered automatically or seamlessly routed to the appropriate colleague. It's a game changer for managing our info@ inbox, we actually no longer have to manage it.",
     sebastianName: "Sebastian Fröhlich",
-    sebastianCompany: "Mertens Steuerberater GmbH"
+    sebastianCompany: "Mertens Steuerberater GmbH",
+
+    // How It Works Page
+    backToHome: "Back to Home",
+    howItWorksTitle: "How does it work?",
+    howItWorksSubtitle: "Discover how Squlio.AI transforms your email management in just four simple steps",
+    stepOneTitle: "Connect Your Email",
+    stepOneDesc: "Securely integrate your Gmail or Outlook account with our AI system",
+    stepTwoTitle: "AI Learns Your Business", 
+    stepTwoDesc: "Our AI analyzes your email patterns and understands your business context",
+    stepThreeTitle: "Smart Routing & Responses",
+    stepThreeDesc: "Emails are automatically categorized, routed, and responded to intelligently",
+    stepFourTitle: "Secure & Private",
+    stepFourDesc: "All data is encrypted and handled with enterprise-grade security standards",
+    getStarted: "Get Started",
   },
   de: {
     // Navbar
     joinWaitlist: "Warteliste beitreten",
+    howItWorks: "Wie funktioniert es?",
     
     // Hero Section
     aiReceptionist: "Ihr KI-Rezeptionist",
@@ -102,7 +117,21 @@ const translations = {
     testimonialsSubtitle: "Verlassen Sie sich nicht nur auf unser Wort. Hier ist, was Early Adopters über Squlio.AI sagen",
     sebastianQuote: "Mit Squlio.AI werden allgemeine Geschäftsanfragen jetzt entweder automatisch beantwortet oder nahtlos an den entsprechenden Kollegen weitergeleitet. Es ist ein Game Changer für das Management unserer info@ Inbox, wir müssen sie eigentlich nicht mehr managen.",
     sebastianName: "Sebastian Fröhlich",
-    sebastianCompany: "Mertens Steuerberater GmbH"
+    sebastianCompany: "Mertens Steuerberater GmbH",
+
+    // How It Works Page
+    backToHome: "Zurück zur Startseite",
+    howItWorksTitle: "Wie funktioniert es?",
+    howItWorksSubtitle: "Entdecken Sie, wie Squlio.AI Ihr E-Mail-Management in nur vier einfachen Schritten transformiert",
+    stepOneTitle: "E-Mail verbinden",
+    stepOneDesc: "Verbinden Sie sicher Ihr Gmail- oder Outlook-Konto mit unserem KI-System",
+    stepTwoTitle: "KI lernt Ihr Unternehmen",
+    stepTwoDesc: "Unsere KI analysiert Ihre E-Mail-Muster und versteht Ihren Geschäftskontext",
+    stepThreeTitle: "Intelligente Weiterleitung & Antworten",
+    stepThreeDesc: "E-Mails werden automatisch kategorisiert, weitergeleitet und intelligent beantwortet",
+    stepFourTitle: "Sicher & Privat",
+    stepFourDesc: "Alle Daten werden verschlüsselt und mit Sicherheitsstandards auf Unternehmensebene behandelt",
+    getStarted: "Loslegen",
   }
 };
 
