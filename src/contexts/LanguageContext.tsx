@@ -60,15 +60,20 @@ const translations = {
     // How It Works Page
     backToHome: "Back to Home",
     howItWorksTitle: "How does it work?",
-    howItWorksSubtitle: "Discover how Squlio.AI transforms your email management in just four simple steps",
-    stepOneTitle: "Connect Your Email",
-    stepOneDesc: "Securely integrate your Gmail or Outlook account with our AI system",
-    stepTwoTitle: "AI Learns Your Business", 
-    stepTwoDesc: "Our AI analyzes your email patterns and understands your business context",
-    stepThreeTitle: "Smart Routing & Responses",
-    stepThreeDesc: "Emails are automatically categorized, routed, and responded to intelligently",
-    stepFourTitle: "Secure & Private",
-    stepFourDesc: "All data is encrypted and handled with enterprise-grade security standards",
+    howItWorksSubtitle: "Discover how Squlio.AI transforms your E-Mail Management in just three simple steps",
+    
+    // New content from the image
+    connectInfoInbox: "Connect your info@ inbox",
+    connectInfoInboxDesc: "Link your Gmail and Outlook info@ inbox account in a few quick clicks",
+    setupYourOrg: "Set up your Org",
+    setupYourOrgDesc: "Explain Squlio who is responsible for what to route emails to the right place",
+    letSqulioWork: "Let Squlio do the work, so that receptionist can concentrate on what really matters",
+    letSqulioWorkDesc: "",
+    routingMachinery: "Routing machinery",
+    routingMachineryDesc: "Squlio routes your emails to the respective colleague",
+    prewrittenDrafts: "Pre-written Drafts",
+    prewrittenDraftsDesc: "Squlio drafts perfect replies for general questions and requests",
+    
     getStarted: "Get Started",
   },
   de: {
@@ -122,15 +127,20 @@ const translations = {
     // How It Works Page
     backToHome: "Zurück zur Startseite",
     howItWorksTitle: "Wie funktioniert es?",
-    howItWorksSubtitle: "Entdecken Sie, wie Squlio.AI Ihr E-Mail-Management in nur vier einfachen Schritten transformiert",
-    stepOneTitle: "E-Mail verbinden",
-    stepOneDesc: "Verbinden Sie sicher Ihr Gmail- oder Outlook-Konto mit unserem KI-System",
-    stepTwoTitle: "KI lernt Ihr Unternehmen",
-    stepTwoDesc: "Unsere KI analysiert Ihre E-Mail-Muster und versteht Ihren Geschäftskontext",
-    stepThreeTitle: "Intelligente Weiterleitung & Antworten",
-    stepThreeDesc: "E-Mails werden automatisch kategorisiert, weitergeleitet und intelligent beantwortet",
-    stepFourTitle: "Sicher & Privat",
-    stepFourDesc: "Alle Daten werden verschlüsselt und mit Sicherheitsstandards auf Unternehmensebene behandelt",
+    howItWorksSubtitle: "Entdecken Sie wie Squlio.AI Ihr E-Mail-Management in nur drei einfachen Schritten transformiert",
+    
+    // New content from the image
+    connectInfoInbox: "Verbinden Sie Ihre info@ Inbox",
+    connectInfoInboxDesc: "Verknüpfen Sie Ihr Gmail und Outlook info@ Inbox Konto in wenigen schnellen Klicks",
+    setupYourOrg: "Richten Sie Ihre Organisation ein",
+    setupYourOrgDesc: "Erklären Sie Squlio, wer für was verantwortlich ist, um E-Mails an die richtige Stelle zu leiten",
+    letSqulioWork: "Lassen Sie Squlio die Arbeit machen, damit sich die Rezeption auf das konzentrieren kann, was wirklich wichtig ist",
+    letSqulioWorkDesc: "",
+    routingMachinery: "Routing-Maschinerie",
+    routingMachineryDesc: "Squlio leitet Ihre E-Mails an den jeweiligen Kollegen weiter",
+    prewrittenDrafts: "Vorgefertigte Entwürfe",
+    prewrittenDraftsDesc: "Squlio erstellt perfekte Antworten für allgemeine Fragen und Anfragen",
+    
     getStarted: "Loslegen",
   }
 };
