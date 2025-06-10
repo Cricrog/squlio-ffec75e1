@@ -22,7 +22,7 @@ const HeroSection = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="flex items-center justify-center mb-8">
           <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Xila.AI
+            Squlio.AI
           </span>
         </div>
         
