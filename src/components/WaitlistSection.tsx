@@ -6,14 +6,16 @@ import { Card, CardContent } from '@/components/ui/card';
 import { CheckCircle, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { supabase } from '@/integrations/supabase/client';
 
 const WaitlistSection = () => {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) {
       toast({
@@ -24,13 +26,42 @@ const WaitlistSection = () => {
       return;
     }
 
-    // Here you would typically send the email to your backend
-    console.log('Joining waitlist with email:', email);
-    setIsSubmitted(true);
-    toast({
-      title: t('welcomeToast'),
-      description: t('welcomeToastDesc')
-    });
+    setIsLoading(true);
+
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([{ email: email }]);
+
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
+          toast({
+            title: "Email already registered",
+            description: "This email is already on our waitlist.",
+            variant: "destructive"
+          });
+        } else {
+          throw error;
+        }
+        setIsLoading(false);
+        return;
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: t('welcomeToast'),
+        description: t('welcomeToastDesc')
+      });
+    } catch (error) {
+      console.error('Error joining waitlist:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -81,13 +112,15 @@ const WaitlistSection = () => {
                   onChange={e => setEmail(e.target.value)} 
                   className="flex-1 h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
                   required 
+                  disabled={isLoading}
                 />
                 <Button 
                   type="submit" 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 h-12 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  disabled={isLoading}
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 h-12 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
                 >
-                  {t('joinNow')}
+                  {isLoading ? "Joining..." : t('joinNow')}
                 </Button>
               </div>
             </form>
