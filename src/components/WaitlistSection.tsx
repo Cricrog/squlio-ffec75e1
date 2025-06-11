@@ -137,7 +137,7 @@ const WaitlistSection = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <Input 
                   type="text" 
-                  placeholder="First Name" 
+                  placeholder={t('firstNamePlaceholder')} 
                   value={firstName} 
                   onChange={e => setFirstName(e.target.value)} 
                   className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
@@ -146,7 +146,7 @@ const WaitlistSection = () => {
                 />
                 <Input 
                   type="text" 
-                  placeholder="Last Name" 
+                  placeholder={t('lastNamePlaceholder')} 
                   value={lastName} 
                   onChange={e => setLastName(e.target.value)} 
                   className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
@@ -166,7 +166,7 @@ const WaitlistSection = () => {
                 />
                 <Input 
                   type="email" 
-                  placeholder="Confirm Email" 
+                  placeholder={t('confirmEmailPlaceholder')} 
                   value={confirmEmail} 
                   onChange={e => setConfirmEmail(e.target.value)} 
                   className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 

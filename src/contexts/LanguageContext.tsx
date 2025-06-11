@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'de';
@@ -38,8 +39,11 @@ const translations = {
     // Waitlist Section
     waitlistTitle: "Join the Waitlist",
     waitlistDescription: "Be among the first to experience the future of front office email management. Get early access to Squlio.AI and transform your business communication.",
+    firstNamePlaceholder: "First Name",
+    lastNamePlaceholder: "Last Name",
     emailPlaceholder: "Enter your email address",
-    joinNow: "Join Now",
+    confirmEmailPlaceholder: "Confirm Email",
+    joinNow: "Join Waitlist",
     freeToJoin: "Free to join",
     earlyAccessFeature: "Early access",
     successTitle: "You're In! 🎉",
@@ -74,7 +78,7 @@ const translations = {
     prewrittenDrafts: "Pre-written Drafts",
     prewrittenDraftsDesc: "Squlio drafts perfect replies for general questions and requests",
     
-    getStarted: "Get Started",
+    getStarted: "Join Waitlist",
   },
   de: {
     // Navbar
@@ -105,7 +109,10 @@ const translations = {
     // Waitlist Section
     waitlistTitle: "Warteliste beitreten",
     waitlistDescription: "Seien Sie unter den ersten, die die Zukunft des Front-Office-E-Mail-Managements erleben. Erhalten Sie frühen Zugang zu Squlio.AI und transformieren Sie Ihre Geschäftskommunikation.",
+    firstNamePlaceholder: "Vorname",
+    lastNamePlaceholder: "Nachname",
     emailPlaceholder: "Geben Sie Ihre E-Mail-Adresse ein",
+    confirmEmailPlaceholder: "E-Mail bestätigen",
     joinNow: "Jetzt beitreten",
     freeToJoin: "Kostenlos beitreten",
     earlyAccessFeature: "Früher Zugang",
@@ -141,7 +148,7 @@ const translations = {
     prewrittenDrafts: "Vorgefertigte Entwürfe",
     prewrittenDraftsDesc: "Squlio erstellt perfekte Antworten für allgemeine Fragen und Anfragen",
     
-    getStarted: "Loslegen",
+    getStarted: "Warteliste beitreten",
   }
 };
 
