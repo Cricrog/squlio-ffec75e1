@@ -16,12 +16,16 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Squlio.AI
-          </Link>
+        <div className="grid grid-cols-3 items-center h-16">
+          {/* Left section - Logo */}
+          <div className="flex justify-start">
+            <Link to="/" className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+              Squlio.AI
+            </Link>
+          </div>
           
-          <div className="flex-1 flex justify-center">
+          {/* Center section - Navigation */}
+          <div className="flex justify-center">
             <Link 
               to="/how-it-works" 
               className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
@@ -30,7 +34,8 @@ const Navbar = ({ onJoinWaitlist }: { onJoinWaitlist: () => void }) => {
             </Link>
           </div>
           
-          <div className="flex items-center gap-3">
+          {/* Right section - Language and CTA */}
+          <div className="flex items-center justify-end gap-3">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="h-10 w-12 p-0">
