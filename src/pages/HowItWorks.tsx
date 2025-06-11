@@ -19,7 +19,7 @@ const HowItWorks = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <Navbar onJoinWaitlist={scrollToWaitlist} />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-32">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
@@ -111,7 +111,7 @@ const HowItWorks = () => {
         <div className="text-center">
           <Link to="/">
             <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-              {t('getStarted')}
+              {t('joinWaitlist')}
             </Button>
           </Link>
         </div>
