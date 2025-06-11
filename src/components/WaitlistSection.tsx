@@ -9,7 +9,10 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
 
 const WaitlistSection = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -17,10 +20,33 @@ const WaitlistSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) {
+    
+    // Validate all fields are filled
+    if (!firstName || !lastName || !email || !confirmEmail) {
       toast({
-        title: t('emailRequired'),
-        description: t('emailRequiredDesc'),
+        title: "All fields required",
+        description: "Please fill out all fields to join the waitlist.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Validate emails match
+    if (email !== confirmEmail) {
+      toast({
+        title: "Emails don't match",
+        description: "Please make sure both email fields match.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
         variant: "destructive"
       });
       return;
@@ -31,7 +57,11 @@ const WaitlistSection = () => {
     try {
       const { error } = await supabase
         .from('waitlist')
-        .insert([{ email: email }]);
+        .insert([{ 
+          email: email,
+          first_name: firstName,
+          last_name: lastName
+        }]);
 
       if (error) {
         if (error.code === '23505') { // Unique constraint violation
@@ -103,26 +133,55 @@ const WaitlistSection = () => {
               {t('waitlistDescription')}
             </p>
             
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4">
+            <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <Input 
+                  type="text" 
+                  placeholder="First Name" 
+                  value={firstName} 
+                  onChange={e => setFirstName(e.target.value)} 
+                  className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
+                  required 
+                  disabled={isLoading}
+                />
+                <Input 
+                  type="text" 
+                  placeholder="Last Name" 
+                  value={lastName} 
+                  onChange={e => setLastName(e.target.value)} 
+                  className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
+                  required 
+                  disabled={isLoading}
+                />
+              </div>
+              <div className="flex flex-col gap-4 mb-6">
                 <Input 
                   type="email" 
                   placeholder={t('emailPlaceholder')} 
                   value={email} 
                   onChange={e => setEmail(e.target.value)} 
-                  className="flex-1 h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
+                  className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
                   required 
                   disabled={isLoading}
                 />
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Input 
+                  type="email" 
+                  placeholder="Confirm Email" 
+                  value={confirmEmail} 
+                  onChange={e => setConfirmEmail(e.target.value)} 
+                  className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500" 
+                  required 
                   disabled={isLoading}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 h-12 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
-                >
-                  {isLoading ? "Joining..." : t('joinNow')}
-                </Button>
+                />
               </div>
+              <Button 
+                type="submit" 
+                size="lg" 
+                disabled={isLoading}
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 h-12 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
+              >
+                {isLoading ? "Joining..." : t('joinNow')}
+              </Button>
             </form>
             
             <div className="flex items-center justify-center mt-8 space-x-8 text-sm text-gray-500">
