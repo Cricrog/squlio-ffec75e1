@@ -91,8 +91,8 @@ const HowItWorks = () => {
                   </div>
                 </div>
                 
-                {/* Two columns showing the workflow */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Three columns showing the workflow */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div className="bg-blue-50 rounded-lg p-6">
                     <h4 className="font-semibold text-gray-900 mb-3">{t('routingMachinery')}</h4>
                     <p className="text-sm text-gray-600">{t('routingMachineryDesc')}</p>
@@ -100,6 +100,10 @@ const HowItWorks = () => {
                   <div className="bg-green-50 rounded-lg p-6">
                     <h4 className="font-semibold text-gray-900 mb-3">{t('prewrittenDrafts')}</h4>
                     <p className="text-sm text-gray-600">{t('prewrittenDraftsDesc')}</p>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-6">
+                    <h4 className="font-semibold text-gray-900 mb-3">{t('aiLearnsVoice')}</h4>
+                    <p className="text-sm text-gray-600">{t('aiLearnsVoiceDesc')}</p>
                   </div>
                 </div>
               </div>
