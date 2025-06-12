@@ -162,10 +162,10 @@ const WaitlistSection = () => {
                   <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">
                     <SelectValue placeholder={t('emailProviderPlaceholder')} />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-md text-lg">
-                    <SelectItem value="Gmail" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Gmail</SelectItem>
-                    <SelectItem value="Outlook" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Outlook</SelectItem>
-                    <SelectItem value="Other" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Other</SelectItem>
+                  <SelectContent className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">
+                    <SelectItem value="Gmail" className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">Gmail</SelectItem>
+                    <SelectItem value="Outlook" className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">Outlook</SelectItem>
+                    <SelectItem value="Other" className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
