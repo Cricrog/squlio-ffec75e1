@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState } from 'react';
 
 type Language = 'en' | 'de';
@@ -79,7 +78,7 @@ const translations = {
     routingMachineryDesc: "Squlio routes your emails to the respective colleague",
     prewrittenDrafts: "Pre-written Drafts",
     prewrittenDraftsDesc: "Squlio drafts perfect replies for general questions and requests",
-    aiLearnsVoice: "Squlio.AI Learns Your Voice",
+    aiLearnsVoice: "Learns Your Voice",
     aiLearnsVoiceDesc: "Squlio.AI automatically reads and learns the way you sound in email",
     
     getStarted: "Join Waitlist",
@@ -153,7 +152,7 @@ const translations = {
     routingMachineryDesc: "Squlio leitet Ihre E-Mails an den jeweiligen Kollegen weiter",
     prewrittenDrafts: "Vorgefertigte Entwürfe",
     prewrittenDraftsDesc: "Squlio erstellt perfekte Antworten für allgemeine Fragen und Anfragen",
-    aiLearnsVoice: "Squlio.AI lernt Ihre Stimme",
+    aiLearnsVoice: "Lernt Ihre Stimme",
     aiLearnsVoiceDesc: "Squlio.AI liest automatisch und lernt, wie Sie in E-Mails klingen",
     
     getStarted: "Warteliste beitreten",
