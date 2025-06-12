@@ -159,13 +159,13 @@ const WaitlistSection = () => {
               </div>
               <div className="mb-4">
                 <Select value={emailProvider} onValueChange={setEmailProvider} disabled={isLoading}>
-                  <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-gray-900">
-                    <SelectValue placeholder={t('emailProviderPlaceholder')} className="text-lg" />
+                  <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500 text-gray-900 rounded-md">
+                    <SelectValue placeholder={t('emailProviderPlaceholder')} />
                   </SelectTrigger>
-                  <SelectContent className="bg-white border shadow-lg">
-                    <SelectItem value="Gmail" className="text-lg">Gmail</SelectItem>
-                    <SelectItem value="Outlook" className="text-lg">Outlook</SelectItem>
-                    <SelectItem value="Other" className="text-lg">Other</SelectItem>
+                  <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-md text-lg">
+                    <SelectItem value="Gmail" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Gmail</SelectItem>
+                    <SelectItem value="Outlook" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Outlook</SelectItem>
+                    <SelectItem value="Other" className="text-lg px-4 py-2 hover:bg-gray-100 cursor-pointer">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
