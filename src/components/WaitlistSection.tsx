@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -160,7 +159,7 @@ const WaitlistSection = () => {
               <div className="mb-4">
                 <Select value={emailProvider} onValueChange={setEmailProvider} disabled={isLoading}>
                   <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">
-                    <SelectValue placeholder={t('emailProviderPlaceholder')} className="text-lg text-gray-900" />
+                    <SelectValue placeholder={t('emailProviderPlaceholder')} />
                   </SelectTrigger>
                   <SelectContent className="bg-white border shadow-lg">
                     <SelectItem value="Gmail" className="text-lg">Gmail</SelectItem>
