@@ -13,16 +13,19 @@ export type Database = {
         Row: {
           created_at: string
           email: string
+          email_provider: string
           id: string
         }
         Insert: {
           created_at?: string
           email: string
+          email_provider: string
           id?: string
         }
         Update: {
           created_at?: string
           email?: string
+          email_provider?: string
           id?: string
         }
         Relationships: []

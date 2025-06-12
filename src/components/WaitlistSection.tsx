@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { CheckCircle, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -11,6 +12,7 @@ import { supabase } from '@/integrations/supabase/client';
 const WaitlistSection = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [emailProvider, setEmailProvider] = useState('');
   const [email, setEmail] = useState('');
   const [confirmEmail, setConfirmEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -22,7 +24,7 @@ const WaitlistSection = () => {
     e.preventDefault();
     
     // Validate all fields are filled
-    if (!firstName || !lastName || !email || !confirmEmail) {
+    if (!firstName || !lastName || !emailProvider || !email || !confirmEmail) {
       toast({
         title: "All fields required",
         description: "Please fill out all fields to join the waitlist.",
@@ -60,7 +62,8 @@ const WaitlistSection = () => {
         .insert([{ 
           email: email,
           first_name: firstName,
-          last_name: lastName
+          last_name: lastName,
+          email_provider: emailProvider
         }]);
 
       if (error) {
@@ -153,6 +156,18 @@ const WaitlistSection = () => {
                   required 
                   disabled={isLoading}
                 />
+              </div>
+              <div className="mb-4">
+                <Select value={emailProvider} onValueChange={setEmailProvider} disabled={isLoading}>
+                  <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">
+                    <SelectValue placeholder={t('emailProviderPlaceholder')} />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Gmail">Gmail</SelectItem>
+                    <SelectItem value="Outlook">Outlook</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div className="flex flex-col gap-4 mb-6">
                 <Input 
