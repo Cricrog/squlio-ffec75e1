@@ -60,7 +60,8 @@ const WaitlistSection = () => {
         .insert([{ 
           email: email,
           first_name: firstName,
-          last_name: lastName
+          last_name: lastName,
+          email_provider: 'Not specified'
         }]);
 
       if (error) {
