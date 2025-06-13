@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -60,8 +59,7 @@ const WaitlistSection = () => {
         .insert([{ 
           email: email,
           first_name: firstName,
-          last_name: lastName,
-          email_provider: 'Not specified'
+          last_name: lastName
         }]);
 
       if (error) {
