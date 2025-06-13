@@ -1,9 +1,9 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { CheckCircle, Mail } from 'lucide-react';
+import { CheckCircle, Mail, Users } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -11,7 +11,6 @@ import { supabase } from '@/integrations/supabase/client';
 const WaitlistSection = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [emailProvider, setEmailProvider] = useState('');
   const [email, setEmail] = useState('');
   const [confirmEmail, setConfirmEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,7 +22,7 @@ const WaitlistSection = () => {
     e.preventDefault();
     
     // Validate all fields are filled
-    if (!firstName || !lastName || !emailProvider || !email || !confirmEmail) {
+    if (!firstName || !lastName || !email || !confirmEmail) {
       toast({
         title: "All fields required",
         description: "Please fill out all fields to join the waitlist.",
@@ -61,8 +60,7 @@ const WaitlistSection = () => {
         .insert([{ 
           email: email,
           first_name: firstName,
-          last_name: lastName,
-          email_provider: emailProvider
+          last_name: lastName
         }]);
 
       if (error) {
@@ -122,7 +120,17 @@ const WaitlistSection = () => {
   return (
     <section id="waitlist" className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-sm">
+        <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-sm relative">
+          {/* Sticker */}
+          <div className="absolute -top-4 -right-4 z-10">
+            <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 border-2 border-white">
+              <div className="flex items-center gap-2 text-sm font-bold">
+                <Users className="w-4 h-4" />
+                Join 50+ SMEs on the waitlist
+              </div>
+            </div>
+          </div>
+          
           <CardContent className="p-12 text-center">
             <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-8">
               <Mail className="w-8 h-8 text-white" />
@@ -155,18 +163,6 @@ const WaitlistSection = () => {
                   required 
                   disabled={isLoading}
                 />
-              </div>
-              <div className="mb-4">
-                <Select value={emailProvider} onValueChange={setEmailProvider} disabled={isLoading}>
-                  <SelectTrigger className="h-12 px-4 text-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500">
-                    <SelectValue placeholder={t('emailProviderPlaceholder')} />
-                  </SelectTrigger>
-                  <SelectContent className="bg-white border shadow-lg">
-                    <SelectItem value="Gmail" className="text-lg">Gmail</SelectItem>
-                    <SelectItem value="Outlook" className="text-lg">Outlook</SelectItem>
-                    <SelectItem value="Other" className="text-lg">Other</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
               <div className="flex flex-col gap-4 mb-6">
                 <Input 
