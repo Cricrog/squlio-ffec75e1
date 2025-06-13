@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -123,11 +122,11 @@ const WaitlistSection = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="border-0 shadow-2xl bg-white/80 backdrop-blur-sm relative">
           {/* Sticker */}
-          <div className="absolute -top-4 -right-4 z-10">
+          <div className="absolute -top-4 -right-2 z-10">
             <div className="bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 border-2 border-white">
               <div className="flex items-center gap-2 text-sm font-bold">
                 <Users className="w-4 h-4" />
-                Join 50+ SMEs on the waitlist
+                {t('waitlistSticker')}
               </div>
             </div>
           </div>

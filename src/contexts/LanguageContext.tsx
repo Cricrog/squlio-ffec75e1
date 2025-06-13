@@ -82,6 +82,7 @@ const translations = {
     aiLearnsVoiceDesc: "Squlio.AI automatically reads and learns the way you sound in email",
     
     getStarted: "Join Waitlist",
+    waitlistSticker: "Join 50+ SMEs on the waitlist",
   },
   de: {
     // Navbar
@@ -156,6 +157,7 @@ const translations = {
     aiLearnsVoiceDesc: "Squlio.AI liest automatisch und lernt, wie Sie in E-Mails klingen",
     
     getStarted: "Warteliste beitreten",
+    waitlistSticker: "Schließen Sie sich 50+ KMU auf der Warteliste an",
   }
 };
 
