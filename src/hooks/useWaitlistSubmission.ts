@@ -43,6 +43,8 @@ export const useWaitlistSubmission = () => {
     }
 
     setIsLoading(true);
+    console.log('Starting waitlist submission for:', email);
+    console.log('Current domain:', window.location.origin);
 
     try {
       const { error } = await supabase
@@ -54,6 +56,13 @@ export const useWaitlistSubmission = () => {
         }]);
 
       if (error) {
+        console.error('Supabase error details:', {
+          code: error.code,
+          message: error.message,
+          details: error.details,
+          hint: error.hint
+        });
+
         if (error.code === '23505') { // Unique constraint violation
           toast({
             title: "Email already registered",
@@ -67,18 +76,32 @@ export const useWaitlistSubmission = () => {
         return;
       }
 
+      console.log('Waitlist submission successful');
       setIsSubmitted(true);
       toast({
         title: t('welcomeToast'),
         description: t('welcomeToastDesc')
       });
     } catch (error) {
-      console.error('Error joining waitlist:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive"
-      });
+      console.error('Error joining waitlist - Full error object:', error);
+      console.error('Error message:', error instanceof Error ? error.message : 'Unknown error');
+      console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+      
+      // Additional debugging for network/CORS issues
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        console.error('Network error detected - possible CORS issue');
+        toast({
+          title: "Connection Error",
+          description: "Unable to connect to the server. Please check your internet connection and try again.",
+          variant: "destructive"
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
     } finally {
       setIsLoading(false);
     }
